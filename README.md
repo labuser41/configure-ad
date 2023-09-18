@@ -11,7 +11,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Microsoft Azure (Virtual Machines/Compute)
 - Remote Desktop
 - Active Directory Domain Services
-- PowerShell
+
 
 <h2>Operating Systems Used </h2>
 
@@ -24,6 +24,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Created two Virtual Machines 
 - Edited the IP Private Address settings 
 - Ensured Connectivity between the client and Domain Controller
+- Installed Active Directory 
 
 <h2>Deployment and Configuration Steps</h2>
 
@@ -48,10 +49,15 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img src="https://github.com/labuser41/configure-ad/assets/144741692/8d8cace6-58a2-4fef-9a5b-60595ab249c9">
 <img src="https://github.com/labuser41/configure-ad/assets/144741692/d3697258-bb5e-4bb2-b0b4-2e613b1d4681">
 
-</p>
+
+
 <p>
  <h4>Now the ping is successful.</h4> 
 <img src="https://github.com/labuser41/configure-ad/assets/144741692/1c25db72-6816-4858-b170-83034ed354f0">
 
-</p>
-<br />
+<h4>Used Service Manager within the Remote Desktop to install Active Directory.</h4> 
+<img src="https://github.com/labuser41/configure-ad/assets/144741692/83420826-d5f1-4559-b329-b7a2eb52d167">
+<h4>Created a new employee named “Jane Doe” with the username of “jane_admin” and added jane_admin to the “Domain Admins” Security Group.</h4>
+<img src="https://github.com/labuser41/configure-ad/assets/144741692/87a4653c-5913-49c0-b0d3-f697dcf84e42">
+
+
