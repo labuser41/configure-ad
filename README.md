@@ -20,33 +20,38 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Setup Resources in Azure
+- Created two Virtual Machines 
+- Edited the IP Private Address settings 
+- Ensured Connectivity between the client and Domain Controller
 
 <h2>Deployment and Configuration Steps</h2>
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+<h4>Created the Domain Controller VM (Windows Server 2022) named “DC-1”. Created the Client VM (Windows 10) named “Client-1”. Ensured that both VMs were on the same Vnet.</h4>                                  
+<img src="https://github.com/labuser41/configure-ad/assets/144741692/ae79624b-46e0-4aec-b934-13e773164cba">
+
+
+<img src="https://github.com/labuser41/configure-ad/assets/144741692/67ec8426-a158-4653-9fc4-d12af2515940">
+<h4>After confirming the same vnet, I set the Domain Controller’s NIC Private IP address to be static in order to keep the IP address from changing. </h4> 
 </p>
 <br />
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+<img src="https://github.com/labuser41/configure-ad/assets/144741692/e3aa0a8e-2467-4ef2-bce7-fd0e8a6cb2cd">
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<h4>I logged in to Client-1 with Remote Desktop and pinged DC-1’s private IP address with ping -t <ip address> (perpetual ping). </h4>
+<img src="https://github.com/labuser41/configure-ad/assets/144741692/60f786d2-006d-4be2-a85c-a0abc274a3a4">
+
+
+<h4>The ping is timing out due to the firewall. In order to allow the traffic, I logged into the Domain Controller and enabled ICMPv4 in on the local windows Firewall. </h4>
+<img src="https://github.com/labuser41/configure-ad/assets/144741692/fef99f65-3663-407b-85dc-8b5df1d73bbc">
+
+<img src="https://github.com/labuser41/configure-ad/assets/144741692/8d8cace6-58a2-4fef-9a5b-60595ab249c9">
+<img src="https://github.com/labuser41/configure-ad/assets/144741692/d3697258-bb5e-4bb2-b0b4-2e613b1d4681">
+
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+ <h4>Now the ping is successful.</h4> 
+<img src="https://github.com/labuser41/configure-ad/assets/144741692/1c25db72-6816-4858-b170-83034ed354f0">
+
 </p>
 <br />
